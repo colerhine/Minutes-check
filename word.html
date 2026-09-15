@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Minutes Check for Word</title><link rel="stylesheet" href="panel.css"><script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script></head>
-<body data-host="word"><header><small>LOCAL · NO API · NO FEES</small><h1>Minutes Check</h1><p>Your chapter checklist, beside your document.</p></header>
+<body data-host="word"><header><small>LOCAL · NO API · NO FEES · v0.5.1</small><h1>Minutes Check</h1><p>Your chapter checklist, beside your document.</p></header>
 <main>
 <label for="type">Meeting</label><select id="type"><option value="chapter">Chapter meeting</option><option value="officer">Officer meeting</option></select>
 <div hidden><button id="refresh"></button><select id="minutesTab"></select><select id="slidesTab"></select><button id="frames" hidden></button><p id="frameStatus"></p><button id="revoke"></button></div>
@@ -10,12 +10,12 @@
 <label for="draft">Live document preview / optional pasted text</label><textarea id="draft" spellcheck="true" placeholder="Paste minutes here…"></textarea>
 <label class="check"><input type="checkbox" id="full"> This is the complete document (check required sections)</label>
 <div class="buttons"><button id="clear">Clear text</button></div>
-<details open><summary>Slides reference</summary><label for="deckFile">Import chapter slides (.pptx)</label><input id="deckFile" type="file" accept=".pptx"><p class="hint">Reads slide text locally from the file. This is a snapshot: re-import after changing the slides. Live PowerPoint tab capture is disabled because it captured interface text.</p><p id="slidesStatus" role="status">Import your PPTX to compare its reports with the minutes.</p>
+<section aria-label="Terminology and writing checks"><h2>Terminology and writing checks</h2><p class="hint">Built-in checks include paddles, gig-books, pledge terminology, quiz references, project days, Christmas party details, and sensitive subjects. They run on every minutes read, even without slides. Custom reminders can be added in Chapter settings.</p><h3 id="summary" aria-live="polite">Ready to check</h3><div id="issues"></div></section>
+<details><summary>Slides reference</summary><label for="deckFile">Import chapter slides (.pptx)</label><input id="deckFile" type="file" accept=".pptx"><p class="hint">Reads slide text locally from the file. This is a snapshot: re-import after changing the slides. Live PowerPoint tab capture is disabled because it captured interface text.</p><p id="slidesStatus" role="status">Import your PPTX to compare its reports with the minutes.</p>
 <label for="slides">Slide text to compare</label><textarea id="slides" placeholder="Paste slide reports here…"></textarea>
 <label class="check"><input type="checkbox" id="slidesFull"> All slide text supplied (images still need review)</label>
 <p class="hint">PPTX imports include embedded slide text in deck order. Images and speaker notes are not transcribed. Comparison uses wording and numbers; paraphrases can be flagged and omissions can be missed.</p>
 <h2 id="comparisonStatus" aria-live="polite">No comparison yet</h2><div id="comparison"></div></details>
-<h2 id="summary" aria-live="polite">Ready to check</h2><div id="issues"></div>
 <details><summary>Final review checklist</summary><ul><li>Confirm the meeting date, opening and closing times.</li><li>Verify names and emails against the current roster.</li><li>Compare reports with the slides, including paper chapter reports.</li><li>Record actual motions, outcomes, and conditions.</li><li>Confirm TKE, Joe, and Jerry selections and update the slides.</li><li>For activities, follow the date-and-time detail limits.</li></ul><p>This checker cannot verify facts, attendance, completeness against slides, or every grammar issue. Review flags in context. Only the correction you explicitly approve is applied in Word.</p></details>
 <footer>Document text and review decisions stay in panel memory. Chapter settings are saved locally. Exported reports contain reviewed excerpts; share them intentionally.</footer>
-</main><script type="module" src="panel.js"></script></body></html>
+</main><script type="module" src="panel.js?v=0.5.1"></script></body></html>

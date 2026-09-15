@@ -4,7 +4,7 @@ const officeHost=document.body.dataset.host==='word';
 let lastIssues=[],lastComparison=[],renderedSnapshot=null;
 import {importPptx} from './pptx.mjs';
 import {extract} from './extract.mjs';
-import {checkMinutes} from './checker.mjs';
+import {checkMinutes} from './checker.mjs?v=0.5.1';
 import {usableCapture} from './capture-quality.mjs';
 import {compareSlides} from './compare.mjs';
 const $=id=>document.getElementById(id);
@@ -168,7 +168,7 @@ async function readOffice(){
   }catch(error){if(current===generation){$('draft').value='';$('full').checked=false;$('status').textContent='Word read failed: '+error.message;render();}}
   finally{busy=false;}
 }
-setupReview(render,()=>({version:'0.5.0',meetingType:$('type').value,minutesCoverage:$('full').checked?'full body supplied':'partial or unconfirmed',slidesSource:$('slidesStatus').textContent,issues:lastIssues,comparison:lastComparison,notice:'Advisory review; no certification of completeness or accuracy.'}));
+setupReview(render,()=>({version:'0.5.1',meetingType:$('type').value,minutesCoverage:$('full').checked?'full body supplied':'partial or unconfirmed',slidesSource:$('slidesStatus').textContent,issues:lastIssues,comparison:lastComparison,notice:'Advisory review; no certification of completeness or accuracy.'}));
 if(officeHost){
   $('connect').disabled=true;
   if(globalThis.Office)Office.onReady(info=>{
